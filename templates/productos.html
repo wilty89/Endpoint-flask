@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Productos {% endblock %}</h1>
+    <div style="width: 50%; margin: auto">
+        {% for product in products.data %}
+        <div style="padding: 10px; background-color: #EEE; margin: 20px">
+            
+            <h4>{{ product.productName | upper }}</h4>
+            <img src={{product.thumbnail}} alt="claro" srcset="" style="width: 200px;;">
+            <p style="font-size: 24px">{{ product.description }}</p>
+            <b>Precio: $ {{ product.unitPrice }}</b><br/><br/>
+            <button type="button">Buy</button>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
